@@ -1,7 +1,10 @@
+#include "cashier.h"
 #include <iostream>
+#include <iomanip>
+#include <string>
 using namespace std;
 
-int main()
+void cashier()
 {
     string dateInput;
     int quantityInput;
@@ -53,5 +56,4 @@ int main()
             cout << endl;
         }
     }
-    return 0;
 }

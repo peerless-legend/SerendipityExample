@@ -1,7 +1,10 @@
+#include "invmenu.h"
 #include <iostream>
+#include <iomanip>
+#include <string>
 using namespace std;
 
-int main()
+void invMenu()
 {
 	cout << "Serendipity Booksellers\n";
     cout << "Inventory Database\n\n";
@@ -26,11 +29,46 @@ int main()
         } while (choiceNum < 1 || choiceNum > 5);
         cout << "\nYou've selected " << choiceNum << "." << endl;
         
-        if(choiceNum == 5)
+        switch(choiceNum)
+        {
+            case 1:
+            //ignore()?
+                lookUpBook();
+                break;
+            case 2:
+                addBook();
+                break;
+            case 3:
+                editBook();
+                break;
+            case 4:
+                deleteBook();
+                break;
+            case 5:
+                running = false;
+                break;
+        }
+        /*if(choiceNum == 5)
         {
             running = false;
-        }
+        }*/
     }
-    
-	return 0;
+}
+
+// lookup stub function
+void lookUpBook()
+{
+    cout << "You've selected 'Look Up Book.'";
+}
+void addBook()
+{
+    cout << "You've selected 'Add Book.'";
+}
+void editBook()
+{
+    cout << "You've selected 'Edit Book.'";
+}
+void deleteBook()
+{
+    cout << "You've selected 'Delete Book.'";
 }

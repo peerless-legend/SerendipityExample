@@ -1,7 +1,10 @@
+#include "reports.h"
 #include <iostream>
+#include <iomanip>
+#include <string>
 using namespace std;
 
-int main()
+void reports()
 {
     cout << "Serendipity Booksellers\n";
     cout << "\tBook Information\n\n";
@@ -27,12 +30,61 @@ int main()
             }
         } while (choiceNum < 1 || choiceNum > 7);
         cout << "\nYou've selected " << choiceNum << "." << endl;
+
+        switch(choiceNum)
+        {
+            case 1:
+            //ignore()?
+                repListing();
+                break;
+            case 2:
+                repWholesale();
+                break;
+            case 3:
+                repRetail();
+                break;
+            case 4:
+                repQty();
+                break;
+            case 5:
+                repCost();
+                break;
+            case 6:
+                repAge();
+                break;
+            case 7:
+                running = false;
+                break;
+        }
         
-        if(choiceNum == 7)
+        /*if(choiceNum == 7)
         {
             running = false;
-        }
+        }*/
     }
-    
-    return 0;
+}
+
+void repListing()
+{
+   cout << "You've selected 'Listing.'"; 
+}
+void repWholesale()
+{
+    cout << "You've selected 'Inventory Wholesale Value.'";
+}
+void repRetail()
+{
+    cout << "You've selected 'Inventory Retail Value.'";
+}
+void repQty()
+{
+    cout << "You've selected 'Listing By Quantity.'";
+}
+void repCost()
+{
+    cout << "You've selected 'Listing By Cost.'";
+}
+void repAge()
+{
+    cout << "You've selected 'Listing By Age.'";
 }
