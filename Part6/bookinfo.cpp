@@ -12,6 +12,7 @@ void bookInfo()
     cout << "ISBN: \n";
     cout << "Title: \n";
     cout << "Author: \n";
+    cout << "Publisher: \n";
     cout << "Date Added: \n";
     cout << "Quantity-On-Hand: \n";
     cout << "Wholesale Cost: \n";
