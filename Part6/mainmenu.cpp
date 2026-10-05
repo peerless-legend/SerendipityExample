@@ -11,17 +11,20 @@ int main()
     bool running = true;
     while(running)
     {
-        cout << "Serendipity Booksellers\n";
-        cout << "\tMain Menu\n\n";
-        cout << "1. Cashier Module\n";
-        cout << "2. Inventory Database Module\n";
-        cout << "3. Report Module\n";
-        cout << "4. Exit\n\n";
-        cout << "Enter choice: ";
         // menu input
         int choiceNum;
+
         do {
             cin >> choiceNum;
+
+            cout << "Serendipity Booksellers\n";
+            cout << "\tMain Menu\n\n";
+            cout << "1. Cashier Module\n";
+            cout << "2. Inventory Database Module\n";
+            cout << "3. Report Module\n";
+            cout << "4. Exit\n\n";
+            cout << "Enter choice: ";
+            
             if(choiceNum < 1 || choiceNum > 4){
                 cout << "\nPlease enter a number from 1-4: ";
             }

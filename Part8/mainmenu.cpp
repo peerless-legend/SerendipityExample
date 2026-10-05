@@ -24,6 +24,9 @@ int main()
     bool running = true;
     while(running)
     {
+        // menu input
+        int choiceNum;
+        
         cout << "Serendipity Booksellers\n";
         cout << "\tMain Menu\n\n";
         cout << "1. Cashier Module\n";
@@ -31,8 +34,7 @@ int main()
         cout << "3. Report Module\n";
         cout << "4. Exit\n\n";
         cout << "Enter choice: ";
-        // menu input
-        int choiceNum;
+
         do {
             cin >> choiceNum;
             if(choiceNum < 1 || choiceNum > 4){

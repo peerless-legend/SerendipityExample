@@ -7,11 +7,11 @@ using namespace std;
 void reports()
 {
     cout << "Serendipity Booksellers\n";
-    cout << "\tBook Information\n\n";
+    cout << "\tReports\n\n";
     
     cout << "1. Inventory Listing\n";
-    cout << "1. Inventory Wholesale Value\n";
-    cout << "1. Inventory Retail Value\n";
+    cout << "2. Inventory Wholesale Value\n";
+    cout << "3. Inventory Retail Value\n";
     cout << "4. Listing by Quantity\n";
     cout << "5. Listing by Cost\n";
     cout << "6. Listing by Age\n";
