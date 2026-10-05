@@ -28,7 +28,8 @@ void cashier()
         cin >> ISBNInput;
         
         cout << "Title: ";
-        cin >> titleInput;
+        cin.ignore();
+        getline(cin, titleInput);
         
         cout << "Price: ";
         cin >> priceInput;
@@ -42,7 +43,12 @@ void cashier()
         cout << "Date: " << dateInput << "\n\n";
         cout << "Qty\t" << "ISBN\t" << "Title\t" << "Price\t" << "\n";
         cout << "--------------------------------------\n";
-        cout << quantityInput << "\t" << ISBNInput << "\t" << titleInput << "\t" << "$ " << priceInput << "\t" << "$ " << untaxedTotal << "\n\n";
+        cout << quantityInput << "\t";
+        cout << ISBNInput << "\t";
+        cout << titleInput << "\t";
+        cout << fixed << setprecision(2) << setw(6) << "$ " << priceInput << "\t";
+        cout << "$ " << untaxedTotal << "\n\n";
+         
         cout << "\tSubtotal\t\t$" << untaxedTotal << "\n";
         cout << "\tTax\t\t$" << tax << "\n";
         cout << "\tTotal\t\t$" << total << "\n\n";
