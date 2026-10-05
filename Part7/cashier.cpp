@@ -13,7 +13,7 @@ void cashier()
     float priceInput;
     
     cout << "Serendipity Booksellers\n";
-    cout << "\tMain Menu\n\n";
+    cout << "\tCashier\n\n";
     
     bool running = true;
     while(running)
