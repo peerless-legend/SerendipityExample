@@ -14,7 +14,7 @@ extern string bookTitle[SIZE];
 extern string isbn[SIZE];
 extern string author[SIZE];
 extern string publisher[SIZE];
-extern string dataAdded[SIZE];
+extern string dateAdded[SIZE];
 extern int qtyOnHand[SIZE];
 extern double wholesale[SIZE];
 extern double retail[SIZE];
@@ -89,7 +89,7 @@ void lookUpBook()
             found = true;
             cout << "Book found." << endl;
             bookInfo(bookTitle[index], isbn[index], author[index], publisher[index],
-                     dataAdded[index], qtyOnHand[index], wholesale[index], retail[index]);
+                     dateAdded[index], qtyOnHand[index], wholesale[index], retail[index]);
             cout << endl;
         }
         else
@@ -157,7 +157,7 @@ void addBook()
         isbn[index] = isbnInput;
         author[index] = authorInput;
         publisher[index] = publisherInput;
-        dataAdded[index] = dateAddedInput;
+        dateAdded[index] = dateAddedInput;
         qtyOnHand[index] = qtyOnHandInput;
         wholesale[index] = wholesaleInput;
         retail[index] = retailInput;
@@ -189,7 +189,7 @@ void editBook()
             found = true;
             cout << "Book found." << endl;
             bookInfo(bookTitle[index], isbn[index], author[index], publisher[index],
-                     dataAdded[index], qtyOnHand[index], wholesale[index], retail[index]);
+                     dateAdded[index], qtyOnHand[index], wholesale[index], retail[index]);
             cout << endl;
             cout << "Which field would you like to edit?\n";
             cout << "1. Title\n2. ISBN\n3. Author\n4. Publisher\n";
@@ -222,7 +222,7 @@ void editBook()
                 case 5:
                     cout << "Enter new date added (mm/dd/yyyy): ";
                     cin.ignore();
-                    getline(cin, dataAdded[index]);
+                    getline(cin, dateAdded[index]);
                     break;
                 case 6:
                     cout << "Enter new quantity on hand: ";
@@ -297,7 +297,7 @@ void deleteBook()
             isbn[index] = "";
             author[index] = "";
             publisher[index] = "";
-            dataAdded[index] = "";
+            dateAdded[index] = "";
             qtyOnHand[index] = 0;
             wholesale[index] = 0.0;
             retail[index] = 0.0;

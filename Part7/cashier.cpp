@@ -41,17 +41,20 @@ void cashier()
         cout << endl;
         cout << "Serendipity Book Sellers\n\n";
         cout << "Date: " << dateInput << "\n\n";
-        cout << "Qty\t" << "ISBN\t" << "Title\t" << "Price\t" << "\n";
-        cout << "--------------------------------------\n";
+        cout << "Qty\tISBN\t\tTitle\t\t\t\tPrice\t\tTotal\n";
+        cout << "-----------------------------------------";
+        cout << "---------------------------------------\n\n\n";
         cout << quantityInput << "\t";
-        cout << ISBNInput << "\t";
-        cout << titleInput << "\t";
-        cout << fixed << setprecision(2) << setw(6) << "$ " << priceInput << "\t";
-        cout << "$ " << untaxedTotal << "\n\n";
-         
-        cout << "\tSubtotal\t\t$" << untaxedTotal << "\n";
-        cout << "\tTax\t\t$" << tax << "\n";
-        cout << "\tTotal\t\t$" << total << "\n\n";
+        cout << left << setw(14) << ISBNInput << "\t";
+        cout << left << setw(26) << titleInput << "\t$";
+        cout << fixed << showpoint << right << setprecision(2);
+
+        cout << setw(6) << priceInput << "\t\t$";
+        cout << setw(6) << untaxedTotal << "\n\n\n";
+        
+        cout << "\tSubtotal\t\t\t\t\t\t\t$" << setw(6) << untaxedTotal << "\n";
+        cout << "\tTax\t\t\t\t\t\t\t\t$" << setw(6) << tax << "\n";
+        cout << "\tTotal\t\t\t\t\t\t\t\t$" << setw(6) << total << "\n\n";
         cout << "Thank You for Shopping at Serendipity!\n\n";
         char choiceChar;
         cout << "Would You Like to Shop Again? (y/n): ";

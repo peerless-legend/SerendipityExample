@@ -16,6 +16,7 @@ void bookInfo(string isbn, string title, string author, string publisher, string
     cout << "Publisher: " << publisher << "\n";
     cout << "Date Added: " << date << "\n";
     cout << "Quantity-On-Hand: " << qty << "\n";
+    cout << fixed << setprecision(2);
     cout << "Wholesale Cost: " << wholesale << "\n";
     cout << "Retail Price: " << retail << endl;
 }

@@ -14,7 +14,7 @@ string bookTitle[SIZE];
 string isbn[SIZE];
 string author[SIZE];
 string publisher[SIZE];
-string dataAdded[SIZE];
+string dateAdded[SIZE];
 int qtyOnHand[SIZE];
 double wholesale[SIZE];
 double retail[SIZE];
