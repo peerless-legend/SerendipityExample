@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <limits>
 #include <string>
 using namespace std;
 
@@ -20,28 +21,32 @@ extern double wholesale[SIZE];
 extern double retail[SIZE];
 
 void invMenu()
-{
-	cout << "Serendipity Booksellers\n";
-    cout << "Inventory Database\n\n";
-    
-    cout << "1. Look Up a Book\n";
-    cout << "2. Add a Book\n";
-    cout << "3. Edit a Book's Record\n";
-    cout << "4. Delete a Book\n";
-    cout << "5. Return to Main Menu\n\n";
-    
+{   
     bool running = true;
     while(running)
     {
+        cout << "Serendipity Booksellers\n";
+        cout << "Inventory Database\n\n";
+    
+        cout << "1. Look Up a Book\n";
+        cout << "2. Add a Book\n";
+        cout << "3. Edit a Book's Record\n";
+        cout << "4. Delete a Book\n";
+        cout << "5. Return to Main Menu\n\n";
+
         cout << "Enter Your Choice: ";
         
         int choiceNum;
-        do {
-            cin >> choiceNum;
-            if(choiceNum < 1 || choiceNum > 5){
-                cout << "\nPlease enter a number from 1-5." << endl;
+        while (true) {
+            if (cin >> choiceNum && choiceNum >= 1 && choiceNum <= 5) {
+                break;
             }
-        } while (choiceNum < 1 || choiceNum > 5);
+
+            cout << "\nPlease enter a number from 1-5." << endl;
+            cin.clear();
+            cin.ignore();
+            //cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
         cout << "\nYou've selected " << choiceNum << "." << endl;
         
         switch(choiceNum)
@@ -191,55 +196,66 @@ void editBook()
             bookInfo(bookTitle[index], isbn[index], author[index], publisher[index],
                      dateAdded[index], qtyOnHand[index], wholesale[index], retail[index]);
             cout << endl;
-            cout << "Which field would you like to edit?\n";
-            cout << "1. Title\n2. ISBN\n3. Author\n4. Publisher\n";
-            cout << "5. Date Added\n6. Quantity on Hand\n7. Wholesale Cost\n8. Retail Price\n";
-           
-            int fieldChoice;
-            cin >> fieldChoice;
-            switch(fieldChoice)
+
+            bool editing = true;
+
+            while(editing)
             {
-                case 1:
-                    cout << "Enter new title: ";
-                    cin.ignore();
-                    getline(cin, bookTitle[index]);
-                    break;
-                case 2:
-                    cout << "Enter new ISBN: ";
-                    cin.ignore();
-                    getline(cin, isbn[index]);
-                    break;
-                case 3:
-                    cout << "Enter new author: ";
-                    cin.ignore();
-                    getline(cin, author[index]);
-                    break;
-                case 4:
-                    cout << "Enter new publisher: ";
-                    cin.ignore();
-                    getline(cin, publisher[index]);
-                    break;
-                case 5:
-                    cout << "Enter new date added (mm/dd/yyyy): ";
-                    cin.ignore();
-                    getline(cin, dateAdded[index]);
-                    break;
-                case 6:
-                    cout << "Enter new quantity on hand: ";
-                    cin >> qtyOnHand[index];
-                    break;
-                case 7:
-                    cout << "Enter new wholesale cost: ";
-                    cin >> wholesale[index];
-                    break;
-                case 8:
-                    cout << "Enter new retail price: ";
-                    cin >> retail[index];
-                    break;
-                default:
-                    cout << "Invalid choice.";
+                cout << "You are currently in \"Edit Mode\",\n";
+                cout << "Which field would you like to edit?\n";
+                cout << "1. Title\n2. ISBN\n3. Author\n4. Publisher\n5. Date Added\n";
+                cout << "6. Quantity on Hand\n7. Wholesale Cost\n8. Retail Price\n9. [Exit]";
+            
+                int fieldChoice;
+                cin >> fieldChoice;
+                switch(fieldChoice)
+                {
+                    case 1:
+                        cout << "Enter new title: ";
+                        cin.ignore();
+                        getline(cin, bookTitle[index]);
+                        break;
+                    case 2:
+                        cout << "Enter new ISBN: ";
+                        cin.ignore();
+                        getline(cin, isbn[index]);
+                        break;
+                    case 3:
+                        cout << "Enter new author: ";
+                        cin.ignore();
+                        getline(cin, author[index]);
+                        break;
+                    case 4:
+                        cout << "Enter new publisher: ";
+                        cin.ignore();
+                        getline(cin, publisher[index]);
+                        break;
+                    case 5:
+                        cout << "Enter new date added (mm/dd/yyyy): ";
+                        cin.ignore();
+                        getline(cin, dateAdded[index]);
+                        break;
+                    case 6:
+                        cout << "Enter new quantity on hand: ";
+                        cin >> qtyOnHand[index];
+                        break;
+                    case 7:
+                        cout << "Enter new wholesale cost: ";
+                        cin >> wholesale[index];
+                        break;
+                    case 8:
+                        cout << "Enter new retail price: ";
+                        cin >> retail[index];
+                        break;
+                    case 9:
+                        editing = false;
+                        cout << "Exiting edit mode." << endl;
+                        return;
+                    default:
+                        cout << "Invalid choice.";
+                }
+                cout << endl;
             }
-            cout << endl;
         }
         else
         {
@@ -281,6 +297,8 @@ void deleteBook()
     }
     else
     {
+        bookInfo(bookTitle[index], isbn[index], author[index], publisher[index],
+        dateAdded[index], qtyOnHand[index], wholesale[index], retail[index]);
         cout << "You're about to delete this book, are you sure? (y/n): ";
         cout << endl;
         char confirm;
