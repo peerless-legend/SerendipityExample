@@ -204,7 +204,7 @@ void editBook()
                 cout << "You are currently in \"Edit Mode\",\n";
                 cout << "Which field would you like to edit?\n";
                 cout << "1. Title\n2. ISBN\n3. Author\n4. Publisher\n5. Date Added\n";
-                cout << "6. Quantity on Hand\n7. Wholesale Cost\n8. Retail Price\n9. [Exit]";
+                cout << "6. Quantity on Hand\n7. Wholesale Cost\n8. Retail Price\n9. [Exit]\n";
             
                 int fieldChoice;
                 cin >> fieldChoice;
