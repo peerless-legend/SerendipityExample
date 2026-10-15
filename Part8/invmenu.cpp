@@ -11,8 +11,8 @@ using namespace std;
 const int SIZE = 20;
 
 // global arrays
-extern string bookTitle[SIZE];
 extern string isbn[SIZE];
+extern string bookTitle[SIZE];
 extern string author[SIZE];
 extern string publisher[SIZE];
 extern string dateAdded[SIZE];
@@ -93,7 +93,7 @@ void lookUpBook()
         {
             found = true;
             cout << "Book found." << endl;
-            bookInfo(bookTitle[index], isbn[index], author[index], publisher[index],
+            bookInfo(isbn[index], bookTitle[index], author[index], publisher[index],
                      dateAdded[index], qtyOnHand[index], wholesale[index], retail[index]);
             cout << endl;
         }
@@ -123,8 +123,8 @@ void addBook()
         }
     }
     if(found){
-        string titleInput;
         string isbnInput;
+        string titleInput;
         string authorInput;
         string publisherInput;
         string dateAddedInput;
@@ -167,7 +167,7 @@ void addBook()
         wholesale[index] = wholesaleInput;
         retail[index] = retailInput;
 
-        bookInfo(titleInput, isbnInput, authorInput, publisherInput, dateAddedInput, qtyOnHandInput, wholesaleInput, retailInput);
+        bookInfo(isbnInput, titleInput, authorInput, publisherInput, dateAddedInput, qtyOnHandInput, wholesaleInput, retailInput);
         cout << endl;
     }
     else{
@@ -193,7 +193,7 @@ void editBook()
         {
             found = true;
             cout << "Book found." << endl;
-            bookInfo(bookTitle[index], isbn[index], author[index], publisher[index],
+            bookInfo(isbn[index], bookTitle[index], author[index], publisher[index],
                      dateAdded[index], qtyOnHand[index], wholesale[index], retail[index]);
             cout << endl;
 
@@ -297,7 +297,7 @@ void deleteBook()
     }
     else
     {
-        bookInfo(bookTitle[index], isbn[index], author[index], publisher[index],
+        bookInfo(isbn[index], bookTitle[index], author[index], publisher[index],
         dateAdded[index], qtyOnHand[index], wholesale[index], retail[index]);
         cout << "You're about to delete this book, are you sure? (y/n): ";
         cout << endl;
@@ -311,8 +311,8 @@ void deleteBook()
         }
         if(confirm == 'y' || confirm == 'Y')
         {
-            bookTitle[index] = "";
             isbn[index] = "";
+            bookTitle[index] = "";
             author[index] = "";
             publisher[index] = "";
             dateAdded[index] = "";
